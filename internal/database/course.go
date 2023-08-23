@@ -58,3 +58,26 @@ func (c *Course) FindAll() ([]Course, error) {
 	}
 	return courses, nil
 }
+
+func (c *Course) FindByCategoryID(CategoryID string) ([]Course, error) {
+	rows, err := c.db.Query("SELECT id, name, description, category_id FROM courses WHERE category_id = $1", CategoryID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	courses := []Course{}
+	for rows.Next() {
+		var course Course
+		err = rows.Scan(&course.ID, &course.Name, &course.Description, &course.CategoryId)
+		if err != nil {
+			return nil, err
+		}
+		courses = append(courses, Course{
+			ID:          course.ID,
+			Name:        course.Name,
+			Description: course.Description,
+			CategoryId:  course.CategoryId,
+		})
+	}
+	return courses, nil
+}
