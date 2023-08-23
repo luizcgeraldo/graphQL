@@ -1,6 +1,10 @@
 package database
 
-import "database/sql"
+import { 
+	"database/sql"
+
+	"github.com/google/uuid"
+}
 
 type Category struct {
 	db          *sql.DB
