@@ -20,7 +20,8 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to open connection to sqlite: %v", err)
 	}
-	defer db.close()
+
+	defer db.Close()
 
 	categoryDb := database.NewCategory(db)
 
