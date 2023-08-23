@@ -6,11 +6,10 @@ import (
 	"net/http"
 	"os"
 
-	database "github.com/luizcgeraldo/GraphQL/internal/database/category.go"
-
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/luizcgeraldo/graphQL/graph"
+	"github.com/luizcgeraldo/graphQL/internal/database"
 	_ "github.com/mattn/go-sqlite3"
 )
 
