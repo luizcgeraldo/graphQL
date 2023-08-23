@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"os"
 
-	database "command-line-arguments/home/luiz/Projects/fullcycle2/integracao/graphql/internal/database/category.go"
+	database "github.com/luizcgeraldo/GraphQL/internal/database/category.go"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/luizcgeraldo/devfullcycle/13-GraphQL/graph"
+	"github.com/luizcgeraldo/graphQL/graph"
 	_ "github.com/mattn/go-sqlite3"
 )
 
