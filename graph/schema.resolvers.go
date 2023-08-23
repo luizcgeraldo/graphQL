@@ -36,11 +36,11 @@ func (r *queryResolver) Categories(ctx context.Context) ([]*model.Category, erro
 		return nil, err
 	}
 	var categoriesModel []*model.Category
-	for _, catecategory := range categories {
+	for _, category := range categories {
 		categoriesModel = append(categoriesModel, &model.Category{
-			ID:          catecategory.ID,
-			Name:        catecategory.Name,
-			Description: catecategory.Description,
+			ID:          category.ID,
+			Name:        category.Name,
+			Description: &category.Description,
 		})
 	}
 	return categoriesModel, nil
